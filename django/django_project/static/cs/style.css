@@ -1,0 +1,29 @@
+h2{
+    color: blue;
+}
+.order{
+    display: flex;
+}
+.button{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+table{
+    margin: 30px;
+    
+    
+}
+td{
+    border: 2px solid;
+    padding: 8px;
+    text-align: left;
+    width: 100px;
+    
+}
+tr{
+    background-color: aqua;
+}
+h1{
+    color:blue;
+}

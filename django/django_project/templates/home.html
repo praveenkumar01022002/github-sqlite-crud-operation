@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>register</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href={% static 'cs/style.css' %}
+    </head>
+    <body>
+        <div class=container>
+            <div class=table>
+                <form action="addData" method="POST" autocomplete="off">
+                    {% csrf_token %}
+                    <h2>register</h2>
+                    <label>Name</lable>
+                    <input type="text" name="name" class="order">
+                    <label>Age</lable>
+                    <input type="text" name="age" class="order">
+                    <label>Address</lable>
+                    <input type="text" name="address" class="order">
+                    <label>Contact</lable>
+                    <input type="text" name="contact" class="order">
+                    <label>Mail</lable>
+                    <input type="text" name="mail" class="order">
+                    <input type="submit" value="register" class="button">
+                    <input type="reset" value="clear" class="button">
+
+                </form>
+                {% if datas %}
+                <table>
+                    <h1>view details</h1>
+                    <tr>
+                        <td>s.no</td>
+                        <td>name</td>
+                        <td>age</td>
+                        <td>address</td>
+                        <td>contact</td>
+                        <td>mail</td>
+                        <td>update</td>
+                        <td>delete</td>
+                    </tr>
+                    {% for data in datas %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{data.Name}}</td>
+                        <td>{{data.Age}}</td>
+                        <td>{{data.Address}}</td>
+                        <td>{{data.Contact}}</td>
+                        <td>{{data.Mail}}</td>
+                        <td><a class="btn" href="updateData/{{data.id}}">update</a></td>
+                        <td><a class="btn" href="deleteData/{{data.id}}">delete</a></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                {% endif %}
+            </div>
+        </div>
+    </body>
+        
+</html>

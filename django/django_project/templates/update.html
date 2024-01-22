@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>register</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href={% static 'cs/style.css' %}
+    </head>
+    <body>
+        <div class=container>
+            <div class=table>
+                <form action="/updateData/{{data.id}}" method="POST" autocomplete="off">
+                    {% csrf_token %}
+                    <h2>register</h2>
+                    <label>Name</lable>
+                    <input type="text" name="name" class="order"value={{data.Name}}>
+                    <label>Age</lable>
+                    <input type="text" name="age" class="order" value={{data.Age}}>
+                    <label>Address</lable>
+                    <input type="text" name="address" class="order"value={{data.Address}}>
+                    <label>Contact</lable>
+                    <input type="text" name="contact" class="order"value={{data.Contact}}>
+                    <label>Mail</lable>
+                    <input type="text" name="mail" class="order"value={{data.Mail}}>
+                    <input type="submit" value="update" class="button">
+                    
+
+                </form>
+               
+            </div>
+        </div>
+    </body>
+        
+</html>
